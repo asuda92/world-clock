@@ -18,6 +18,16 @@ function updateTime() {
   tokyoTimeElement.innerHTML = `${tokyoTime.format(
     "h:mm:ss"
   )} <small>${tokyoTime.format("A")}</small>`;
+
+  let viennaElement = document.querySelector("#vienna");
+  let viennaDateElement = document.querySelector("#vienna .date");
+  let viennaTimeElement = document.querySelector("#vienna .time");
+  let viennaTime = moment().tz("Europe/Vienna");
+
+  viennaDateElement.innerHTML = viennaTime.format("MMMM Do YYYY");
+  viennaTimeElement.innerHTML = `${viennaTime.format(
+    "h:mm:ss"
+  )} <small>${viennaTime.format("A")}</small>`;
 }
 
 function updateCity(event) {
